@@ -1,0 +1,11 @@
+.footer {
+  padding: var(--space-24) 0;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+  }
+}

@@ -1,0 +1,244 @@
+.wrap {
+  height: var(--header-height);
+  display: flex;
+  border-bottom: 1px solid var(--gray);
+}
+
+.header {
+  max-width: var(--container-width-with-padding);
+  width: 100%;
+  padding: 0 var(--container-padding);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  [data-logo] {
+    font-family: var(--playfair-font);
+    font-size: var(--fs-24);
+    font-weight: var(--fw-700);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+
+    &:focus-visible {
+      outline-offset: 3px;
+      outline: var(--focus-color) solid 2px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  gap: var(--space-40);
+  list-style-type: none;
+}
+
+.headerLink {
+  font-weight: var(--fw-500);
+  transition: opacity 0.2s ease-in-out;
+
+  &:focus-visible {
+    outline-offset: 3px;
+    outline: var(--focus-color) solid 2px;
+    transition: none;
+  }
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.cartButton {
+  cursor: pointer;
+  width: var(--button-w);
+  height: var(--button-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brown-dark);
+  border-radius: var(--radii-round);
+  font-size: var(--fs-20);
+  color: white;
+  transition: opacity 0.2s ease-in-out;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    transition: none;
+    outline: none;
+    box-shadow: var(--focus-shadow);
+  }
+
+  > svg {
+    display: inline-flex;
+  }
+
+  &[data-menu] {
+    width: 100% !important;
+    border-radius: var(--radii-4) !important;
+    margin-top: 20px !important;
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  font-size: var(--fs-20);
+  border-radius: var(--radii-4);
+  transition: opacity 0.2s ease-in-out;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    transition: none;
+    outline: none;
+    box-shadow: var(--focus-shadow);
+  }
+
+  > svg {
+    display: inline-flex;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+}
+
+.modalContent {
+  position: fixed;
+  width: 90vw;
+  max-width: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radii-8);
+  padding: var(--space-16);
+  background: white;
+  z-index: 16;
+
+  > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-56);
+  }
+
+  [data-title] {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-500);
+    margin-bottom: var(--space-12);
+  }
+
+  [dat-desc] {
+    margin-bottom: var(--space-20);
+  }
+}
+
+.proceedButton {
+  cursor: pointer;
+  width: 100%;
+  height: var(--button-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radii-4);
+  background: var(--brown-dark);
+  color: white;
+  transition: opacity 0.2s ease-in-out;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    transition: none;
+    outline: none;
+    box-shadow: var(--focus-shadow);
+  }
+}
+
+.burgerButton {
+  cursor: pointer;
+  width: var(--button-w);
+  height: var(--button-h);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radii-round);
+  font-size: var(--fs-20) !important;
+  color: var(--brown-dark);
+  background: none !important;
+  transition: opacity 0.2s ease-in-out;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    transition: none;
+    outline: none;
+    box-shadow: var(--focus-shadow);
+  }
+
+  > svg {
+    display: inline-flex;
+  }
+}
+
+@media (hover: hover) {
+  .headerLink:hover {
+    opacity: 0.8;
+  }
+  .proceedButton:hover {
+    opacity: 0.8;
+  }
+
+  .closeButton:hover {
+    opacity: 0.8;
+  }
+
+  .cartButton:hover {
+    opacity: 0.8;
+  }
+
+  .burgerButton:hover {
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    [data-logo] {
+      font-size: var(--fs-20);
+    }
+  }
+  .links {
+    display: none;
+  }
+  .rightSide {
+    display: none;
+  }
+  .burgerButton {
+    display: flex;
+  }
+}

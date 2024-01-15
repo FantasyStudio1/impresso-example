@@ -1,0 +1,85 @@
+.root {
+  padding-top: var(--space-24) !important;
+  padding-bottom: var(--space-24) !important;
+}
+
+.canvasContainer {
+  position: relative;
+  height: 675px;
+}
+
+.colorButton {
+  --size: 36px;
+
+  cursor: pointer;
+  position: relative;
+  background: none;
+  padding: 4px !important;
+  border-radius: var(--radii-round);
+  border: 1px solid transparent !important;
+
+  > div {
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--radii-round);
+    background: var(--color);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--focus-shadow);
+  }
+}
+
+@media (hover: hover) {
+  .colorButton:hover {
+    border-color: #d2d2d7 !important;
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > svg {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .canvasContainer {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .canvasContainer {
+    height: 375px;
+  }
+
+  .radio {
+    gap: var(--space-4);
+  }
+  .colorButton {
+    --size: 32px;
+  }
+}

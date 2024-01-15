@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+  max-width: var(--container-width-with-padding);
+  padding: 0 var(--container-padding);
+  width: 100%;
+  margin: auto;
+
+  &[data-border-top] {
+    &::after {
+      content: '';
+      background: var(--gray);
+      height: 1px;
+      width: 200vw;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &[data-border-bottom] {
+    &::before {
+      content: '';
+      background: var(--gray);
+      height: 1px;
+      width: 200vw;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

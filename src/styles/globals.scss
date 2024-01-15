@@ -1,0 +1,89 @@
+@import './reset.scss';
+
+:root {
+  --cream: #faf4f0;
+  --brown-dark: #35261f;
+  --brown-light: #ab725d;
+  --gray: #d2d1d0;
+  --green: #4b8178;
+  --yellow: #f7b61f;
+  --orange: #f76b15;
+  --bg: var(--cream);
+  --focus-color: var(--orange);
+  --focus-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--focus-color);
+
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-32: 32px;
+  --fs-40: 40px;
+  --fs-48: 48px;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+
+  --radii-4: 4px;
+  --radii-8: 8px;
+  --radii-16: 16px;
+  --radii-round: 9999px;
+
+  --button-h: 36px;
+  --button-w: 36px;
+
+  --font-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  --header-height: 64px;
+  --container-width: 1400px;
+  --container-padding: var(--space-12);
+  --container-width-with-padding: calc(var(--container-width) + (var(--container-padding) * 2));
+}
+
+::selection {
+  background: #ec9455;
+}
+
+html,
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  font-family: var(--roboto-font, var(--font-fallback));
+  background: var(--bg);
+  color: var(--brown-dark);
+  font-size: 100%;
+  min-height: 100%;
+  max-width: 100vw;
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --header-height: 50px;
+  }
+}

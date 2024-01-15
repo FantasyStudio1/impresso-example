@@ -1,0 +1,15 @@
+.root {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg);
+  padding: var(--container-padding);
+  z-index: 10;
+}
+
+.menuLink {
+  display: block;
+  padding: var(--space-12) 0;
+}
